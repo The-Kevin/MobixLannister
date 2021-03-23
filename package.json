@@ -1,12 +1,19 @@
 {
   "name": "MobixLannister",
   "version": "1.0.0",
-  "description": "",
+  "description": "API sobre as Crônicas de Gelo e Fogo da Mobix!",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
