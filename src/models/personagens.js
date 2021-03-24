@@ -10,11 +10,14 @@ const personagens = async(req, res) => {
             const { data } = await axios(povCharacters[obv]);
 
             async function le(atributo){
+                let array = new Array;
                 for(let i in atributo){
                     const {data} = await axios(atributo[i]);
-                    return data.name;
+                    array.push(data.name)
+                    return array
                 }
             }
+
             const model = {
                 name: data.name,
                 gender: data.gender,
@@ -25,17 +28,17 @@ const personagens = async(req, res) => {
                 aliases: data.aliases,
                 father: data.father,
                 mother: data.mother,
-                //spouse: await le(data.spouse),
+                spouse: await le(data.spouse),
                 allegiances: await le(data.allegiances),
                 books: await le(data.books),
                 povBooks: await le(data.povBooks),
                 tvSeries: data.tvSeries,
                 playedBy: data.playedBy
             }
+
             console.log(model)
             
-        }
-        
+        } 
     }
 }
 
