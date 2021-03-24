@@ -18,7 +18,7 @@ const capas = async (req, res) => {
     }
     
     console.log(biblioteca);
-    return biblioteca;
+    res.send(biblioteca);
 }
 
 module.exports = capas;
