@@ -2,6 +2,8 @@ const axios = require('axios');
 
 const personagens = async(req, res) => {
 
+    let listaPersonagens = new Array;
+
     for(let i = 0; i < 9; i++){
         const { data } = await axios('https://anapioficeandfire.com/api/books/');
         const povCharacters = data[i]['povCharacters'];
@@ -28,7 +30,7 @@ const personagens = async(req, res) => {
                 aliases: data.aliases,
                 father: data.father,
                 mother: data.mother,
-                spouse: await le(data.spouse),
+               // spouse: await le(data.spouse),
                 allegiances: await le(data.allegiances),
                 books: await le(data.books),
                 povBooks: await le(data.povBooks),
@@ -36,10 +38,13 @@ const personagens = async(req, res) => {
                 playedBy: data.playedBy
             }
 
-            console.log(model)
+            listaPersonagens.push(model);
             
         } 
     }
+
+    res.send(listaPersonagens);
+
 }
 
 module.exports = personagens;
