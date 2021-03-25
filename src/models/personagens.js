@@ -11,18 +11,13 @@ const personagens = async(req, res) => {
         for(let obv in povCharacters){
             const { data } = await axios.get(povCharacters[obv]);
 
-            async function le(atributo){
-                let array = new Array;
-                for(let i in atributo){
-                    try{
-                        const {data} = await axios.get(atributo[i]);
-                    }catch(error){
-                       continue; 
-                    }
-                   
-                    array.push(data.name)
-                    return array
+            async function get(atributo){
+                let list = new Array;
+                for(let it in atributo){
+                    let result = await axios.get(atributo[it]);
+                    list.push(result.data);
                 }
+                return list;
             }
             
             const model = {
@@ -35,10 +30,10 @@ const personagens = async(req, res) => {
                 aliases: data.aliases,
                 father: data.father,
                 mother: data.mother,
-                spouse: await le(data.spouse),
-                allegiances: await le(data.allegiances),
-                books: await le(data.books),
-                povBooks: await le(data.povBooks),
+                spouse: await get(data.spouse),
+                allegiances: await get(data.allegiances),
+                books: await get(data.books),
+                povBooks: await get(data.povBooks),
                 tvSeries: data.tvSeries,
                 playedBy: data.playedBy
             }
@@ -48,7 +43,7 @@ const personagens = async(req, res) => {
         } 
     }
 
-        while(true){res.send(listaPersonagens)}
+        res.send(listaPersonagens)
 }
 
 module.exports = personagens;

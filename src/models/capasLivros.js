@@ -16,11 +16,11 @@ const capas = async (req, res) => {
         return result
     }
 
-    biblioteca.push(encode(livro1));
-    biblioteca.push(encode(livro2));
-    biblioteca.push(encode(livro3));
-    biblioteca.push(encode(livro4));
-    biblioteca.push(encode(livro5));
+    biblioteca.push({"livro 1": encode(livro1)});
+    biblioteca.push({"livro 2": encode(livro2)});
+    biblioteca.push({"livro 3": encode(livro3)});
+    biblioteca.push({"livro 4": encode(livro4)});
+    biblioteca.push({"livro 5": encode(livro5)});
     
     res.send(biblioteca)
 }
