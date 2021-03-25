@@ -8,6 +8,7 @@ const livrosPersonagens = async (req, res) => {
         try{
             const character = await axios.get(`https://anapioficeandfire.com/api/characters/${i}`);
             if(!(character.data['name'] == '')){ 
+
                 async function get(atributo){
                     let livros = new Array;
                     for(let it in atributo){
@@ -16,12 +17,15 @@ const livrosPersonagens = async (req, res) => {
                     }
                     return livros;
                 }
+
+
                 const model = {
                     name: character.data['name'],
                     books: await get(character.data['books'])
                 }
                 modelo.push(model);
             }
+            
         }catch(error){
             continue;
         }        
