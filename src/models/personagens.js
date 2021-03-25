@@ -4,7 +4,7 @@ const personagens = async(req, res) => {
 
     let listaPersonagens = new Array;
 
-    for(let i = 0; i < 4; i++){ //9
+    for(let i = 0; i < 4; i++){
         const { data } = await axios.get('https://anapioficeandfire.com/api/books/');
         const povCharacters = data[i]['povCharacters'];
         
@@ -21,42 +21,19 @@ const personagens = async(req, res) => {
                 return spouse
             }
 
-            async function getAllegiances(){
-                let allegiances = new Array;
+            async function get(atributo){
+                let resultado = new Array;
 
-                if(!(data['allegiances'] == '')){
-                    for(let i in data['allegiances']){
-                        let res = await axios.get(data['allegiances'][i]);
-                        allegiances.push(res.data['name']);
-
-                    }
-                }
-                return allegiances
-            }
-            async function getBooks(){
-                let books = new Array;
-
-                if(!(data['books'] == '')){
-                    for(let i in data['books']){
-                        let res = await axios.get(data['books'][i]);
-                        books.push(res.data['name']);
+                if(!(data[atributo] == '')){
+                    for(let i in data[atributo]){
+                        let res = await axios.get(data[atributo][i]);
+                        resultado.push(res.data['name']);
 
                     }
                 }
-                return books
+                return resultado;
             }
-            async function getPovBooks(){
-                let povBooks = new Array;
 
-                if(!(data['povBooks'] == '')){
-                    for(let i in data['povBooks']){
-                        let res = await axios.get(data['povBooks'][i]);
-                        povBooks.push(res.data['name']);
-
-                    }
-                }
-                return povBooks
-            }
                 const model = {
                     name: data.name,
                     gender: data.gender,
@@ -68,9 +45,9 @@ const personagens = async(req, res) => {
                     father: data.father,
                     mother: data.mother,
                     spouse: await getSpouse(),
-                    allegiances: await getAllegiances(),
-                    books: await getBooks(),
-                    povBooks: await getPovBooks(),
+                    allegiances: await get('allegiances'),
+                    books: await get('books'),
+                    povBooks: await get('povBooks'),
                     tvSeries: data.tvSeries,
                     playedBy: data.playedBy
                 }
