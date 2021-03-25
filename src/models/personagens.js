@@ -5,20 +5,21 @@ const personagens = async(req, res) => {
     let listaPersonagens = new Array;
 
     for(let i = 0; i < 9; i++){
-        const { data } = await axios('https://anapioficeandfire.com/api/books/');
+        const { data } = await axios.get('https://anapioficeandfire.com/api/books/');
         const povCharacters = data[i]['povCharacters'];
       
         for(let obv in povCharacters){
-            const { data } = await axios(povCharacters[obv]);
+            const { data } = await axios.get(povCharacters[obv]);
 
             async function le(atributo){
                 let array = new Array;
                 for(let i in atributo){
                     try{
-                        const {data} = await axios(atributo[i]);
+                        const {data} = await axios.get(atributo[i]);
                     }catch(error){
-                        return atributo;
+                       continue; 
                     }
+                   
                     array.push(data.name)
                     return array
                 }
