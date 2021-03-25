@@ -4,7 +4,7 @@ const personagens = async(req, res) => {
 
     let listaPersonagens = new Array;
 
-    for(let i = 0; i < 1; i++){ //9
+    for(let i = 0; i < 4; i++){ //9
         const { data } = await axios.get('https://anapioficeandfire.com/api/books/');
         const povCharacters = data[i]['povCharacters'];
         
