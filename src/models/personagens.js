@@ -57,9 +57,6 @@ const personagens = async(req, res) => {
                 }
                 return povBooks
             }
-           
-          
-               
                 const model = {
                     name: data.name,
                     gender: data.gender,
