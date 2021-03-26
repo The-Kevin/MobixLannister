@@ -30,7 +30,7 @@ const start = (req, res) => {
                 "rota": "http://127.0.0.1:3000/livros",
                 "funcionamento": "A Api percorre todos os ids referentes a rota characters (https://anapioficeandfire.com/api/characters/<id>), caso encontre uma pagina referente a um personagem, retorna os campos name e books",
             },
-            "obs": "não existe um padrão referente aos ids dos personagens, apenas alguns ids aleatorios retornam personagens reais dos livros, por este motivo o loop tem valor fixo de ids a serem percorridos, podendo ser alterado para os 2028 ids possiveis"
+            "obs": "não existe um padrão referente aos ids dos personagens, apenas alguns ids aleatorios retornam personagens reais dos livros, por este motivo o loop tem valor fixo de 20 ids a serem percorridos, podendo ser alterado para os 2028 ids possiveis"
         },
         Jaime: {
             "descrição":{
@@ -38,6 +38,11 @@ const start = (req, res) => {
                 "rota": "http://127.0.0.1:3000/jaime",
                 "funcionamento": "A Api busca os campos referentes a url do personagem Jaime Lannister (personagem 529)"
             }
+        },
+
+        Sobre: {
+            "detalhes": "Você pode acompanhar o processo de loading pelo terminal!",
+            "observações": "Alguns processos requerem muitas requests, alguns processos podem levar até 4 minutos para finalizar"
         }
     }
 
