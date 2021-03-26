@@ -7,6 +7,7 @@ const personagens = require('./models/personagens');
 const capas = require('./models/capasLivros');
 const livros = require('./models/livrosPersonagens');
 const jaimeLannister = require('./models/jaime');
+const sansaStark = require('./models/sansa');
 
 const routes = Router();
 
@@ -16,6 +17,7 @@ routes.get("/personagens", personagens);
 routes.get("/capas", capas);
 routes.get("/livros", livros);
 routes.get("/jaime", jaimeLannister);
+routes.get("/sansa", sansaStark);
 
 
 module.exports = routes;
