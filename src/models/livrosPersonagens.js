@@ -2,7 +2,7 @@ const axios = require('axios');
 
 const livrosPersonagens = async (req, res) => {
 
-    let quantidade = 20
+    let quantidade = 20 // retornam 10 personagens
     let modelo = new Array;
     for(let i = 1; i <= quantidade; i++){
         try{

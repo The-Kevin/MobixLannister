@@ -34,7 +34,9 @@ const start = (req, res) => {
         },
         Jaime: {
             "descrição":{
-
+                "desafio": "Obtenha o detalhe de um ou mais personagens.",
+                "rota": "http://127.0.0.1:3000/jaime",
+                "funcionamento": "A Api busca os campos referentes a url do personagem Jaime Lannister (personagem 529)"
             }
         }
     }
