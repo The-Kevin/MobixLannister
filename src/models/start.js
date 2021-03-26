@@ -39,6 +39,22 @@ const start = (req, res) => {
                 "funcionamento": "A Api busca os campos referentes a url do personagem Jaime Lannister (personagem 529)"
             }
         },
+        Sansa: {
+            "descrição":{
+                "desafio": "Obtenha o detalhe de um ou mais personagens.",
+                "rota": "http://127.0.0.1:3000/sansa",
+                "funcionamento": "A Api busca os campos referentes a url do personagem Sansa Stark (personagem 957)"
+            }
+        },
+        Arya: {
+            "descrição":{
+                "desafio": "Obtenha o detalhe de um ou mais personagens.",
+                "rota": "http://127.0.0.1:3000/arya",
+                "funcionamento": "A Api busca os campos referentes a url do personagem Arya Stark (personagem 148)"
+            }
+        },
+
+
 
         Sobre: {
             "detalhes": "Você pode acompanhar o processo de loading pelo terminal!",
