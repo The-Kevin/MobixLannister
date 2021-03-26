@@ -4,7 +4,8 @@
   "description": "API sobre as Crônicas de Gelo e Fogo da Mobix!",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "startD": "nodemon src/index.js",
     "test": "jest"
   },
   "keywords": [],

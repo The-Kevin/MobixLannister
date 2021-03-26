@@ -53,7 +53,7 @@ const personagens = async(req, res) => {
                     playedBy: data.playedBy
                 }
                 listaPersonagens.push(model);
-                console.log(`carregando informações... ${i+1}/5 livros`)
+                console.log(`carregando informações...`)
         } 
     }
         res.send(listaPersonagens)
