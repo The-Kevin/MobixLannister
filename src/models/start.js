@@ -24,10 +24,10 @@ const start = (req, res) => {
                 "funcionamento": "A Api requisita o JPEG de cada um dos livros, em seguida é passada uma função que transforma o resultado em base64 conforme requisitado e por fim é adicionado a um array, o resultado do mesmo é retornado "
             }
         },
-        Livros: {
+        LivrosPersonagem: {
             "descrição": {
                 "desafio": "Obtenha todos os livros relacionados a um personagem",
-                "rota": "http://127.0.0.1:3000/livros",
+                "rota": "http://127.0.0.1:3000/livrosPersonagem",
                 "funcionamento": "A Api percorre todos os ids referentes a rota characters (https://anapioficeandfire.com/api/characters/<id>), caso encontre uma pagina referente a um personagem, retorna os campos name e books",
             },
             "obs": "não existe um padrão referente aos ids dos personagens, apenas alguns ids aleatorios retornam personagens reais dos livros, por este motivo o loop tem valor fixo de 20 ids a serem percorridos, podendo ser alterado para os 2028 ids possiveis"
@@ -56,9 +56,16 @@ const start = (req, res) => {
         personagemUnico: {
                 "descrição": {
                     "modulo": "modulo feito após o prazo de entrega",
-                    "rota": "http://127.0.0.1:3000/personagemUnico/",
+                    "rota": "http://127.0.0.1:3000/personagemUnico/{id}",
                     "funcionamento": "retorna o personagem de acordo com o id"
                 }
+        },
+        livros: {
+            "descrição": {
+                "modulo": "modulo feito após o prazo de entrega",
+                "rota": "http://127.0.0.1:3000/livros/{id}",
+                "funcionamento": "retorna o livvro de acordo com o id"
+            }
         },
 
         Sobre: {
