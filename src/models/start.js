@@ -64,7 +64,7 @@ const start = (req, res) => {
             "descrição": {
                 "modulo": "modulo feito após o prazo de entrega",
                 "rota": "http://127.0.0.1:3000/livros/{id}",
-                "funcionamento": "retorna o livvro de acordo com o id"
+                "funcionamento": "retorna o livro de acordo com o id"
             }
         },
 

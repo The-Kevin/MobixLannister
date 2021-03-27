@@ -17,7 +17,7 @@ const livros = async (req, res) => {
         }
         return res.send(model);
     }catch(error){
-        res.status(404).send("Id não encontrado!")
+        res.status(404).send("Livro com id não encontrado!")
     }
    
 }
