@@ -53,8 +53,13 @@ const start = (req, res) => {
                 "funcionamento": "A Api busca os campos referentes a url do personagem Arya Stark (personagem 148)"
             }
         },
-
-
+        personagemUnico: {
+                "descrição": {
+                    "modulo": "modulo feito após o prazo de entrega",
+                    "rota": "http://127.0.0.1:3000/personagemUnico/",
+                    "funcionamento": "retorna o personagem de acordo com o id"
+                }
+        },
 
         Sobre: {
             "detalhes": "Você pode acompanhar o processo de loading pelo terminal!",
