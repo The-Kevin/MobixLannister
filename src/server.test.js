@@ -1,5 +1,5 @@
 const route = require('./routes');
-const start = require('./models/start');
+const cors = require('cors');
 
 const useSpy = jest.fn();
 const listenSpy = jest.fn();
@@ -7,10 +7,11 @@ const listenSpy = jest.fn();
 jest.doMock('express', () => {
     return() => ({
         use: useSpy,
-        listen: listenSpy
+        listen: listenSpy,
     })
 })
 
+jest.mock('cors');
 
 describe("test server", () => {
 
@@ -19,9 +20,14 @@ describe("test server", () => {
         expect(listenSpy).toHaveBeenCalled();
     })
 
-    test("test if express use routes", async () => {
+    test("test if express use routes", () => {
        require('./index');
         expect(useSpy).toHaveBeenCalledWith(route);
+    })
+    
+    test("test if express use cors", () => {
+        require('./index');
+        expect(useSpy).toHaveBeenCalledWith(cors());
     })
 
 })
