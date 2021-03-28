@@ -1,4 +1,4 @@
-const { Router } = require('express');
+const express = require('express');
 
 // importações 
 
@@ -12,7 +12,7 @@ const aryaStark = require('./models/arya');
 const personagemUnico = require('./models/personagemUnico');
 const livros = require('./models/Livros');
 
-const routes = Router();
+const routes = express.Router();
 
 
 routes.get("/", start);

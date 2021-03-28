@@ -8,7 +8,7 @@
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-- [Expo](https://expo.io/)
+- [axios](https://github.com/axios/)
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/pt-br/)
 - [nodejs-base-64](https://github.com/anton-bot/nodejs-base64)
